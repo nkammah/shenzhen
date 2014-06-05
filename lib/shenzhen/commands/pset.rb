@@ -12,6 +12,6 @@ command :pset do |c|
     say_error "Missing or unspecified .plist file" and abort unless @plist and File.exist?(@plist)
 
     value = Shenzhen::PlistBuddy.set(@plist, key, value)
-    say_error "Key #{key} not found in #{@plist}" and abort if value.nil?
+    say_error "Key '#{key}' not found in #{@plist}" and abort if value.nil?
   end
 end
